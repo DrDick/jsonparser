@@ -11,19 +11,22 @@
     function parse () {$(function(){
     a = $('#exampleFormControlTextarea1').val();
     res = JSON.parse(a);
-    $('#exampleFormControlTextarea2').val(res);}
+    result = Object.entries(res).map(i=> i.join(":")).join(" \n");
+    $('#exampleFormControlTextarea2').val(result);}
     );}
-    
+
     </script>
 
+    
+
     <div class="form-group" id="first">
-        <label for="exampleFormControlTextarea1">Введите JSON</label>
+        <label for="exampleFormControlTextarea1">Введите данные для парсинга</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
 
       <button type="button" class="btn btn-primary" id="bjs" onclick="parse()">Конвертировать</button>
 
-      <div class="form-group">
+      <div class="form-group-second">
         <label for="exampleFormControlTextarea2">Здесь будет результат</label>
         <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
       </div>
